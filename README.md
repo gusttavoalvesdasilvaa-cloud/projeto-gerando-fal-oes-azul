@@ -1,36 +1,147 @@
 # projeto-gerando-falcoes-azul
-🌊 Tema do Projeto: Poluição Hídrica
-📘 Descrição do Projeto: 
-Este projeto tem como objetivo conscientizar e propor soluções educativas e tecnológicas para o problema da poluição da água, utilizando ferramentas do ecossistema Microsoft, como Git/GitHub, MakeCode e Minecraft Education.
-Por meio da programação e da simulação em ambientes virtuais, o projeto busca demonstrar como a tecnologia pode auxiliar na compreensão do problema, na educação ambiental e no desenvolvimento de soluções relacionadas à preservação dos recursos hídricos.
-Os códigos desenvolvidos simulam situações reais de poluição da água e apresentam possíveis ações para mitigar seus impactos, como controle de resíduos, monitoramento da qualidade da água e práticas sustentáveis.
+Poluição Hídrica
 
-🧰 Tecnologias Utilizadas
+Este projeto tem como objetivo conscientizar, simular e propor soluções educativas para o problema da poluição da água, utilizando tecnologia de forma interativa. Através do Minecraft Education, MakeCode e GitHub, buscamos mostrar como a tecnologia pode ajudar na preservação dos recursos hídricos.
 
-Git & GitHub: controle de versões, organização do projeto e colaboração entre os desenvolvedores.
-Microsoft MakeCode: criação de códigos acessíveis para simular soluções ambientais.
-Minecraft Education Edition: simulação de cenários ambientais e aplicação prática das soluções desenvolvidas por meio da programação.
-Copilot: assistente criativo.
+Visão Geral
+
+O tema do projeto é Poluição Hídrica, um problema ambiental que afeta diretamente a qualidade de vida da população.
+
+O projeto trata da contaminação da água causada pelo descarte incorreto de lixo, esgoto sem tratamento e substâncias químicas em rios e córregos.
+
+As tecnologias utilizadas são:
+
+Minecraft Education: criação de cenários virtuais que simulam rios poluídos e soluções ambientais.
+
+MakeCode: programação de automações dentro do jogo para representar processos de limpeza e monitoramento.
+
+GitHub: organização do projeto e armazenamento dos arquivos desenvolvidos.
+
+Copilot: apoio criativo e técnico no desenvolvimento das ideias.
 
 
-🎯 Público-Alvo Principal
-O público-alvo deste projeto é composto por:
+Problema
 
-Moradores de Itaquaquecetuba que não possuem acesso ao saneamento básico, principalmente à coleta e tratamento de esgoto.
+A poluição hídrica é um problema que ocorre quando rios, lagos e outras fontes de água recebem resíduos sólidos, esgoto doméstico e produtos químicos sem tratamento adequado.
 
-📊 Hipóteses de Impacto do Projeto
+Em Itaquaquecetuba, muitas áreas sofrem com falta de saneamento básico, o que contribui para a contaminação da água e aumenta os riscos para a saúde da população.
 
-Hipótese 1 - Estações de Tratamento de água (ETE)
-O jogador inicia com um NPC que apresenta o objetivo: transformar água poluída em água potável. Ele libera o acesso às próximas etapas, a água é coletada de uma fonte poluída. O NPC explica a presença de lixo e resíduos grandes, e o jogador deve removê-los manualmente, O NPC apresenta o uso de produtos químicos para agrupar impurezas. O jogador simula isso adicionando itens (como poções), representando a formação de flocos, O NPC explica que os flocos afundam. O jogador ativa um mecanismo (como alavanca) para observar a separação dos resíduos da água, A água passa por camadas de materiais como areia, cascalho e carvão. O jogador monta ou atravessa um filtro para completar a etapa, O NPC explica a eliminação de microrganismos com cloro. O jogador adiciona um item simbólico para concluir o processo, O NPC final mostra que a água está limpa e reforça a importância de evitar a poluição. Pode incluir uma mensagem educativa ou reinício do percurso.
+Causas principais
 
-Hipótese 2 - Robôs coletores de lixo em córregos
-Agentes coletarão itens jogados dentro da água de córregos e irão depositá-los em baús, onde serão descartados em lugares apropriados. 
+Falta de saneamento básico
 
-Hipótese 3 - Sensores de PH
-Iremos posicionar NPC's acima de rios, que irão comunicar o nivel do PH da água do rio, assim garantindo controle de qualidade de água.
+Descarte irregular de lixo
 
-🌍 Impacto Esperado
+Lançamento de esgoto em córregos
 
-Garantir o acesso ao saneamento básico com qualidade a todos que os necessitam.
-Maior conscientização da população em temas ambientais.
-Formação de cidadãos mais conscientes sobre o uso e a preservação da água.
+
+Impactos
+
+Contaminação da água
+
+Doenças na população
+
+Danos ao meio ambiente
+
+
+Objetivo
+
+Objetivo geral
+
+Demonstrar como a tecnologia pode ser usada para conscientizar sobre a importância da preservação da água e apresentar soluções para reduzir a poluição hídrica.
+
+Objetivos específicos
+
+Simular processos de tratamento da água
+
+Mostrar os efeitos da poluição nos rios
+
+Ensinar práticas sustentáveis
+
+Incentivar a preservação ambiental
+
+
+Público-Alvo
+
+Público primário: moradores de Itaquaquecetuba sem acesso adequado ao saneamento básico
+
+Público secundário: estudantes e professores
+
+Público ampliado: comunidade interessada em educação ambiental
+
+
+Hipótese de Impacto
+
+Se utilizarmos simulações no Minecraft Education, então os usuários compreenderão melhor os impactos da poluição da água.
+
+Se forem usados robôs coletores virtuais, então será possível demonstrar formas tecnológicas de limpeza dos rios.
+
+Se sensores de pH forem simulados, então os usuários entenderão a importância do monitoramento da qualidade da água.
+
+
+Solução Proposta
+
+O projeto apresenta soluções educativas e tecnológicas para demonstrar formas de combater a poluição hídrica.
+
+Simulação no Minecraft Education
+
+No mundo virtual foram criados:
+
+Rios poluídos
+
+Estações de tratamento de água
+
+Robôs coletores de lixo
+
+Sensores de pH nos rios
+
+
+Essa simulação permite visualizar como a água pode ser tratada e preservada.
+
+Automações com MakeCode
+
+As automações criadas incluem:
+
+Coleta automática de lixo nos córregos
+
+Monitoramento do pH da água
+
+Ativação do sistema de filtragem
+
+Mensagens educativas com NPCs
+
+
+Essas automações representam soluções tecnológicas para o cuidado com os recursos hídricos.
+
+Estrutura do Projeto
+
+📁 Projeto-Poluicao-Hidrica/
+┣ 📁 Demo/
+┣ 📁 Docs/
+┣ 📁 src/
+┣ 📄 IA-USAGE.md
+┣ 📄 README.md
+
+Vantagens e Limitações
+
+Vantagens
+
+Aprendizagem interativa
+
+Fácil compreensão visual
+
+Uso criativo da tecnologia
+
+
+Limitações
+
+Simulação não substitui ações reais
+
+Dependência de acesso à tecnologia
+
+Necessidade de conhecimento básico digital
+
+
+Conclusão
+
+O projeto permitiu compreender melhor os impactos da poluição hídrica e a importância da preservação da água. O uso da tecnologia tornou o aprendizado mais visual e interativo, mostrando que ferramentas digitais podem contribuir para a conscientização ambiental e para a formação de cidadãos mais responsáveis com o meio ambiente.
