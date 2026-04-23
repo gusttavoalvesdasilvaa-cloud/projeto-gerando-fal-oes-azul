@@ -1,11 +1,36 @@
-Uso do Copilot no Projeto
-O Microsoft Copilot foi utilizado como assistente criativo e técnico ao longo do desenvolvimento do projeto. Seu uso teve como principal finalidade apoiar a organização, análise e síntese de dados, além de auxiliar na estruturação conceitual das soluções propostas.
-De forma técnica, o Copilot contribuiu nos seguintes aspectos:
+so do Microsoft Copilot no Projeto 
 
-Elaboração e síntese de dados: apoio na criação de resumos técnicos do levantamento de dados, interpretação de indicadores (como percentual da população sem coleta de esgoto) e organização das informações de forma clara e objetiva.
-Apoio à programação: auxílio na lógica de códigos desenvolvidos no Microsoft MakeCode, sugerindo estruturas, comandos e boas práticas para simulações no Minecraft Education.
-Organização do projeto: suporte na estruturação textual do projeto (introdução, desenvolvimento e conclusão), garantindo clareza, coerência e padronização técnica.
-Assistência criativa: apoio na formulação das hipóteses de impacto, na descrição das soluções simuladas (ETA, robôs coletores e sensores de pH) e na adaptação do conteúdo para linguagem educativa.
-Auxílio na organização de dados e versionamento: contribuição indireta na organização do conteúdo armazenado em repositórios Git/GitHub, facilitando a documentação e o entendimento do projeto.
+Visão Geral 
+O foi utilizado como ferramenta de apoio durante o desenvolvimento do projeto, ajudando principalmente na organização das informações, na escrita do conteúdo e no suporte técnico das etapas realizadas. Sua utilização permitiu tornar o trabalho mais claro, organizado e com linguagem mais adequada ao tema de sustentabilidade e saneamento básico.  
 
-Dessa forma, o Copilot atuou como uma ferramenta de suporte técnico e educacional, otimizando o processo de desenvolvimento, melhorando a qualidade das entregas e contribuindo para a integração entre tecnologia, educação ambiental e soluções sustentáveis.
+Objetivo do Uso da IA 
+A utilização da Inteligência Artificial teve como objetivo auxiliar no desenvolvimento do projeto, facilitando a resolução de dúvidas, melhorando a apresentação das informações e contribuindo para a construção das soluções propostas dentro do . Além disso, a IA também serviu como ferramenta de aprendizagem durante o processo.  
+
+Como o Copilot ajudou no projeto 
+O Copilot contribuiu nos seguintes aspectos: 
+
+Elaboração e síntese de dados: ajudou na criação de resumos do levantamento de dados sobre saneamento básico e poluição da água no município. 
+
+Apoio à programação: auxiliou na lógica dos códigos criados no MakeCode para simulações dentro do Minecraft Education. 
+
+Organização do projeto: colaborou na estruturação da introdução, desenvolvimento e conclusão. 
+
+Assistência criativa: ajudou a desenvolver ideias como sensores de pH, estação de tratamento de água e robôs coletores. 
+
+Padronização textual: contribuiu para deixar a linguagem mais formal e compreensível. 
+
+Exemplo de uso no projeto 
+Durante o desenvolvimento, foi necessário explicar como os sensores de pH funcionariam para monitorar a qualidade da água. O Copilot foi usado para transformar a ideia inicial em uma explicação mais técnica e educativa, facilitando a apresentação da solução no projeto.  
+
+Prompt utilizado 
+Um exemplo de solicitação feita para a IA foi: 
+
+"Explique de forma simples como sensores de pH podem ajudar no monitoramento da água dentro de um projeto de sustentabilidade no Minecraft Education." 
+
+Esse tipo de comando ajudou a obter respostas mais direcionadas para o tema do trabalho.
+
+Limitações encontradas 
+Em alguns momentos, a IA apresentou respostas muito genéricas ou diferentes da proposta do projeto, sendo necessário revisar manualmente as informações para garantir que o conteúdo estivesse correto e adequado ao trabalho. 
+
+Conclusão 
+O uso do Microsoft Copilot foi importante para o desenvolvimento do projeto, pois ofereceu suporte técnico e criativo durante todo o processo. A ferramenta contribuiu para melhorar a qualidade das entregas, facilitar a aprendizagem e integrar tecnologia com educação ambiental de forma mais eficiente.
