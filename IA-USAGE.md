@@ -1,4 +1,4 @@
-so do Microsoft Copilot no Projeto 
+Uso do Microsoft Copilot no Projeto 
 
 Visão Geral 
 O foi utilizado como ferramenta de apoio durante o desenvolvimento do projeto, ajudando principalmente na organização das informações, na escrita do conteúdo e no suporte técnico das etapas realizadas. Sua utilização permitiu tornar o trabalho mais claro, organizado e com linguagem mais adequada ao tema de sustentabilidade e saneamento básico.  
