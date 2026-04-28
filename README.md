@@ -26,7 +26,6 @@ Falta de saneamento básico
 Descarte irregular de lixo
 Lançamento de esgoto em córregos
 
-
 Impactos
 
 Contaminação da água
@@ -51,39 +50,32 @@ Público primário: moradores de Itaquaquecetuba sem acesso adequado ao saneamen
 Público secundário: estudantes e professores
 Público ampliado: comunidade interessada em educação ambiental
 
-
 Hipótese de Impacto
 
 Se utilizarmos simulações no Minecraft Education, então os usuários compreenderão melhor os impactos da poluição da água.
 Se forem usados robôs coletores virtuais, então será possível demonstrar formas tecnológicas de limpeza dos rios.
 Se sensores de pH forem simulados, então os usuários entenderão a importância do monitoramento da qualidade da água.
 
-
 Solução Proposta
 
 O projeto apresenta soluções educativas e tecnológicas para demonstrar formas de combater a poluição hídrica.
 
 Simulação no Minecraft Education
-
 No mundo virtual foram criados:
 
 Rios poluídos
 Estações de tratamento de água
 Robôs coletores de lixo
 Sensores de pH nos rios
-
 Essa simulação permite visualizar como a água pode ser tratada e preservada.
 
 Automações com MakeCode
-
 As automações criadas incluem:
 
 Coleta automática de lixo nos córregos
 Monitoramento do pH da água
 Ativação do sistema de filtragem
 Mensagens educativas com NPCs
-
-
 Essas automações representam soluções tecnológicas para o cuidado com os recursos hídricos.
 
 Vantagens e Limitações
@@ -93,7 +85,6 @@ Vantagens
 Aprendizagem interativa
 Fácil compreensão visual
 Uso criativo da tecnologia
-
 
 Limitações
 
