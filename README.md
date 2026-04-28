@@ -22,33 +22,27 @@ Em Itaquaquecetuba, muitas áreas sofrem com falta de saneamento básico, o que 
 
 Causas principais
 
-Falta de saneamento básico
-Descarte irregular de lixo
-Lançamento de esgoto em córregos
+Falta de saneamento básico, Descarte irregular de lixo, Lançamento de esgoto em córregos.
 
 Impactos
 
-Contaminação da água
-Doenças na população
-Danos ao meio ambiente
-
-Objetivo
+Contaminação da água, Doenças na população, Danos ao meio ambiente.
 
 Objetivo geral
 Demonstrar como a tecnologia pode ser usada para conscientizar sobre a importância da preservação da água e apresentar soluções para reduzir a poluição hídrica.
 
 Objetivos específicos
 
-Simular processos de tratamento da água
-Mostrar os efeitos da poluição nos rios
-Ensinar práticas sustentáveis
-Incentivar a preservação ambiental
+Simular processos de tratamento da água;
+Mostrar os efeitos da poluição nos rios;
+Ensinar práticas sustentáveis;
+Incentivar a preservação ambiental.
 
 Público-Alvo
 
-Público primário: moradores de Itaquaquecetuba sem acesso adequado ao saneamento básico
-Público secundário: estudantes e professores
-Público ampliado: comunidade interessada em educação ambiental
+Público primário: moradores de Itaquaquecetuba sem acesso adequado ao saneamento básico;
+Público secundário: estudantes e professores;
+Público ampliado: comunidade interessada em educação ambiental.
 
 Hipótese de Impacto
 
