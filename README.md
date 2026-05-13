@@ -86,6 +86,45 @@ Simulação não substitui ações reais
 Dependência de acesso à tecnologia
 Necessidade de conhecimento básico digital
 
+RELATÓRIO — AUTOMAÇÃO NO MINECRAFT EDUCATION
+
+PARTE 1 — DEFINIÇÃO DA AUTOMAÇÃO
+
+– A automação central do projeto consiste na programação de Agentes Coletores de Resíduos. Utilizando a interface do MakeCode, os Agentes serão programados para patrulhar áreas hídricas específicas (rios e canais) dentro do mundo Minecraft.
+
+O problema que irá resolver é sobre a dificuldade de coleta manual de resíduos sólidos em grandes extensões de água e o risco de exposição humana a ambientes contaminados ou de difícil acesso. 
+
+– A automação simula sistemas reais de robôs de limpeza.
+
+PARTE 2 — FUNCIONAMENTO
+
+– O sistema opera através de uma integração entre blocos lógicos e scripts em JavaScript.
+– A ativação se consiste no jogador iniciando a automação via comando de chat.
+– O Agente utiliza um laço de repetição (loop) para percorrer coordenadas (x) e (z) sobre o leito do rio.
+– Detecção e Coleta: Através de comandos de inspeção (agent inspect), o robô identifica quaisquer itens jogados, que representam o lixo. 
+– Ao detectar o resíduo, o Agente executa a função de coletar o item e avança para a próxima posição.
+
+PARTE 3 — OBJETIVO DA AUTOMAÇÃO
+
+– O objetivo é realizar a limpeza sistemática e contínua do ecossistema aquático sem a necessidade de intervenção manual bloco a bloco.
+
+– Vantagens da Automatização:
+
+- Eficiência: O Agente cobre uma área muito maior em menos tempo que um jogador.
+- Precisão: A programação garante que nenhum resíduo seja esquecido, seguindo uma malha de coordenadas exata.
+- Escalabilidade: Permite demonstrar como múltiplos robôs poderiam trabalhar simultaneamente em um cenário real de crise ambiental.
+
+PARTE 4 — RELAÇÃO COM O TEMA
+
+– As automações conectam-se diretamente aos pilares de Poluição Hídrica e Qualidade da Água.
+– O lixo espalhado no rio representa o descarte irregular e a falta de saneamento básico que aflige centros urbanos.
+– A automação demonstra como a Inteligência Artificial e a robótica podem ser aliadas na recuperação de biomas degradados. 
+– Ao remover os resíduos, o projeto ilustra a melhoria visual e funcional da água, essencial para a saúde pública.
+
+PARTE 5 — RESULTADO ESPERADO
+
+– Ao final da simulação, espera-se que o leito do rio esteja completamente livre de lixo, restaurando a estética natural do ambiente.
+
 Conclusão
 
 O projeto permitiu compreender melhor os impactos da poluição hídrica e a importância da preservação da água. O uso da tecnologia tornou o aprendizado mais visual e interativo, mostrando que ferramentas digitais podem contribuir para a conscientização ambiental e para a formação de cidadãos mais responsáveis com o meio ambiente.
