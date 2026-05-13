@@ -1,1 +1,39 @@
+// primeiro bloco, teleporte
+player.onChat("teste", function () {
+    agent.teleportToPlayer()
+})
+// segundo bloco, o principal
+player.onChat("limpar", function () {
+    agent.teleportToPlayer()
+    agent.move(FORWARD, 5)
+    // -------- IDA --------
+    for (let index = 0; index < 20; index++) {
+        // Coleta lixo (ex: lã)
+        if (agent.inspect(AgentInspection.Block, FORWARD) == STONE) {
+            agent.collectAll()
+        }
+        // Seguir o rio (água embaixo)
+        if (agent.inspect(AgentInspection.Block, DOWN) == WATER) {
+            agent.move(FORWARD, 3)
+        } else {
+            agent.turn(LEFT_TURN)
+            agent.move(FORWARD, 3)
+        }
+    }
+    // -------- VIRAR --------
+    agent.turn(LEFT_TURN)
+    agent.turn(LEFT_TURN)
+    // -------- VOLTA --------
+    for (let index = 0; index < 20; index++) {
+        if (agent.inspect(AgentInspection.Block, FORWARD) == STONE) {
+            agent.collectAll()
+        }
+        if (agent.inspect(AgentInspection.Block, DOWN) == WATER) {
+            agent.move(FORWARD, 3)
+        } else {
+            agent.turn(LEFT_TURN)
+            agent.move(FORWARD, 3)
+        }
+    }
+})
 
