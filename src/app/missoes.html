@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EcoWater | Missões Ambientais</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="logo-block">
+          <div class="logo-badge">E</div>
+          <div>
+            <p class="logo-name">EcoWater</p>
+            <p class="logo-tag">Missões e pontos</p>
+          </div>
+        </div>
+        <nav class="top-actions">
+          <a class="btn btn-secondary" href="index.html">Home</a>
+          <a class="btn btn-secondary" href="login.html">Login</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="section-block">
+          <div class="panel panel-glass">
+            <div class="section-header">
+              <div>
+                <p class="eyebrow">Missões Ambientais</p>
+                <h2>Complete missões e ganhe pontos</h2>
+              </div>
+              <span class="tag">Incentivo à preservação</span>
+            </div>
+            <div id="user-summary" class="water-result">Carregando status do usuário...</div>
+            <div id="missions-list" class="missions-grid"></div>
+            <p class="auth-message" id="mission-message"></p>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="auth.js"></script>
+    <script src="missions.js"></script>
+  </body>
+</html>

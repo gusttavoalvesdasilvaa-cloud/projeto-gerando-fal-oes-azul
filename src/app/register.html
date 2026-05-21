@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EcoWater | Cadastro</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="logo-block">
+          <div class="logo-badge">E</div>
+          <div>
+            <p class="logo-name">EcoWater</p>
+            <p class="logo-tag">Criar nova conta</p>
+          </div>
+        </div>
+        <nav class="top-actions">
+          <a class="btn btn-secondary" href="index.html">Home</a>
+          <a class="btn btn-secondary" href="login.html">Login</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="section-block auth-page">
+          <div class="panel panel-glass">
+            <div class="section-header">
+              <div>
+                <p class="eyebrow">Cadastro</p>
+                <h2>Crie sua conta EcoWater</h2>
+              </div>
+            </div>
+            <form id="register-form" class="auth-form">
+              <label>
+                Nome completo
+                <input type="text" id="register-name" placeholder="Seu nome completo" required />
+              </label>
+              <label>
+                Email
+                <input type="email" id="register-email" placeholder="seu@email.com" required />
+              </label>
+              <label>
+                Senha
+                <input type="password" id="register-password" placeholder="Crie uma senha" required />
+              </label>
+              <button class="btn btn-primary" type="submit">Cadastrar</button>
+            </form>
+            <p class="auth-message" id="auth-message">Seu cadastro ajuda a preservar a água.</p>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="auth.js"></script>
+    <script>
+      const registerForm = document.getElementById('register-form');
+      const messageArea = document.getElementById('auth-message');
+
+      function showAuthMessage(message, success = false) {
+        messageArea.textContent = message;
+        messageArea.style.color = success ? '#86efac' : '#fda4af';
+      }
+
+      registerForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const name = document.getElementById('register-name').value.trim();
+        const email = document.getElementById('register-email').value.trim().toLowerCase();
+        const password = document.getElementById('register-password').value;
+        const result = registerUser(name, email, password);
+        if (result.success) {
+          showAuthMessage(`Conta criada! Bem-vindo, ${name}.`, true);
+          setTimeout(() => {
+            window.location.href = 'login.html';
+          }, 800);
+        } else {
+          showAuthMessage(result.message, false);
+        }
+      });
+    </script>
+  </body>
+</html>

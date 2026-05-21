@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EcoWater | Monitoramento Ambiental</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="logo-block">
+          <div class="logo-badge">E</div>
+          <div>
+            <p class="logo-name">EcoWater</p>
+            <p class="logo-tag">Monitoramento Ambiental Futurista</p>
+          </div>
+        </div>
+        <nav class="top-actions">
+          <a class="btn btn-primary" id="login-action" href="login.html">Entrar</a>
+          <a class="btn btn-secondary" id="register-action" href="register.html">Cadastro</a>
+          <a class="btn btn-secondary" href="mapa.html">Mapa Ambiental</a>
+          <a class="btn btn-secondary" href="missoes.html">Missões</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero-panel">
+          <div class="hero-copy">
+            <p class="eyebrow">Plataforma interativa e educativa</p>
+            <h1>EcoWater: sua central de água, qualidade e sustentabilidade.</h1>
+            <p class="hero-text">Monitore rios, visualize áreas poluídas, ajude cidades sem saneamento básico e complete missões ambientais em uma interface futurista e responsiva.</p>
+            <div class="hero-actions">
+              <a class="btn btn-glow" href="login.html">Entrar no sistema</a>
+              <a class="btn btn-outline" href="mapa.html">Ver painel ambiental</a>
+            </div>
+          </div>
+          <div class="hero-status-card">
+            <div class="status-card">
+              <h2>Status atual</h2>
+              <div class="status-grid">
+                <div class="status-item blue">
+                  <span class="status-value" id="status-score">78%</span>
+                  <span class="status-label">Saúde Ambiental</span>
+                </div>
+                <div class="status-item green">
+                  <span class="status-value" id="status-ph">6.8</span>
+                  <span class="status-label">Nível de pH</span>
+                </div>
+                <div class="status-item cyan">
+                  <span class="status-value" id="status-robots">3</span>
+                  <span class="status-label">Robôs ativos</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="hero-animation">
+            <div class="wave"></div>
+          </div>
+        </section>
+
+        <section class="section-block" id="alerts-section">
+          <div class="section-header">
+            <div>
+              <p class="eyebrow">Sistema de Alertas Ambientais</p>
+              <h2>Notificações em tempo real</h2>
+            </div>
+            <span class="tag">Atualização Automática</span>
+          </div>
+          <div class="cards-grid" id="alerts-list"></div>
+        </section>
+
+        <section class="section-block split-section">
+          <div class="panel panel-glass">
+            <div class="panel-header">
+              <div>
+                <p class="eyebrow">Mapa Ambiental Interativo</p>
+                <h2>Regiões e riscos</h2>
+              </div>
+              <a class="btn btn-small" href="mapa.html">Abrir mapa</a>
+            </div>
+            <div class="map-card static-map-preview">
+              <div class="map-legend">
+                <div><span class="legend-dot red"></span>Água contaminada</div>
+                <div><span class="legend-dot yellow"></span>Risco médio</div>
+                <div><span class="legend-dot green"></span>Área sustentável</div>
+                <div><span class="legend-dot blue"></span>Água potável</div>
+              </div>
+              <div class="map-preview-text">
+                Explore um mapa completo de Itaquaquecetuba e identifique pontos de águas ruins, estações de tratamento, áreas de risco e regiões sustentáveis.
+              </div>
+            </div>
+          </div>
+
+          <div class="panel panel-glass">
+            <div class="panel-header">
+              <div>
+                <p class="eyebrow">Sistema de Medição de pH</p>
+                <h2>Qualidade da água em tempo real</h2>
+              </div>
+              <span class="tag">Barra colorida</span>
+            </div>
+            <div class="ph-meter">
+              <div class="ph-display">
+                <span>Nível de pH</span>
+                <strong id="ph-value">6.8</strong>
+              </div>
+              <div class="ph-scale">
+                <span>4.0</span>
+                <span>7.0</span>
+                <span>10.0</span>
+              </div>
+              <div class="ph-bar-outer">
+                <div class="ph-bar-inner" id="ph-bar"></div>
+              </div>
+              <p class="ph-status" id="ph-status">Água saudável</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section-block">
+          <div class="section-header">
+            <div>
+              <p class="eyebrow">Robôs Limpadores</p>
+              <h2>Frota de limpeza automatizada</h2>
+            </div>
+            <span class="tag">Status online/offline</span>
+          </div>
+          <div class="cards-grid" id="robots-list"></div>
+        </section>
+
+        <section class="section-block">
+          <div class="panel panel-glass treatment-panel">
+            <div class="section-header">
+              <div>
+                <p class="eyebrow">Sistema de Tratamento de Água e Esgoto</p>
+                <h2>Fluxograma de saneamento</h2>
+              </div>
+              <span class="tag">Processo completo</span>
+            </div>
+            <ol class="treatment-steps">
+              <li><strong>Coleta da água</strong> - captação de rios, lagos e rede de drenagem.</li>
+              <li><strong>Filtragem</strong> - remoção de resíduos sólidos e partículas invisíveis.</li>
+              <li><strong>Tratamento químico</strong> - neutralização e correção do pH.</li>
+              <li><strong>Distribuição de água potável</strong> - envio para cidades e comunidades.</li>
+              <li><strong>Tratamento do esgoto</strong> - reciclagem e segurança ambiental.</li>
+            </ol>
+          </div>
+        </section>
+
+        <section class="section-block missions-block">
+          <div class="section-header">
+            <div>
+              <p class="eyebrow">Sistema de Missões Ambientais</p>
+              <h2>Interaja com desafios reais</h2>
+            </div>
+            <span class="tag">Recompensas</span>
+          </div>
+          <div class="missions-grid" id="missions-list"></div>
+        </section>
+
+        <section class="section-block reputation-block">
+          <div class="panel panel-glass">
+            <div class="section-header">
+              <div>
+                <p class="eyebrow">Sistema de Reputação Ambiental</p>
+                <h2>Ranking sustentável</h2>
+              </div>
+              <span class="tag">Pontuação ecológica</span>
+            </div>
+            <div class="reputation-grid">
+              <div class="reputation-card">
+                <span>Iniciante Ambiental</span>
+                <p>Comece a jornada ajudando rios e comunidades.</p>
+              </div>
+              <div class="reputation-card">
+                <span>Protetor dos Rios</span>
+                <p>Missões completadas e sistemas de saneamento instalados.</p>
+              </div>
+              <div class="reputation-card">
+                <span>Guardião da Água</span>
+                <p>Cidades mais limpas, água potável e ecosistemas restaurados.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section-block city-evolution-block">
+          <div class="section-header">
+            <div>
+              <p class="eyebrow">Evolução Dinâmica das Cidades</p>
+              <h2>Impacto das ações ambientais</h2>
+            </div>
+            <span class="tag">Mudança visual automática</span>
+          </div>
+          <div class="city-evolution-card" id="city-evolution-card">
+            <div>
+              <h3 id="city-title">Cidade em Recuperação</h3>
+              <p id="city-summary">Mostre a transição de um ambiente poluído para uma cidade sustentável com água limpa, árvores e vida saudável.</p>
+            </div>
+            <div class="city-status-list">
+              <div><strong>Água limpa</strong><span id="city-feature-1">Em progresso</span></div>
+              <div><strong>Árvores</strong><span id="city-feature-2">Restauradas</span></div>
+              <div><strong>Saúde</strong><span id="city-feature-3">Melhorando</span></div>
+            </div>
+            <button class="btn btn-small" id="toggle-city-state">Ver estado</button>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

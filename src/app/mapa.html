@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EcoWater | Mapa Ambiental</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+      #map { height: 520px; border-radius: 24px; border: 1px solid rgba(148, 163, 184, 0.18); }
+      .map-legend-panel { margin-top: 20px; display: grid; gap: 14px; }
+      .map-legend-item { display: flex; align-items: center; gap: 12px; color: #cbd5e1; }
+      .map-legend-dot { width: 14px; height: 14px; border-radius: 999px; display: inline-block; }
+    </style>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="logo-block">
+          <div class="logo-badge">E</div>
+          <div>
+            <p class="logo-name">EcoWater</p>
+            <p class="logo-tag">Mapa Ambiental de Itaquaquecetuba</p>
+          </div>
+        </div>
+        <nav class="top-actions">
+          <a class="btn btn-secondary" href="index.html">Home</a>
+          <a class="btn btn-secondary" href="missoes.html">Missões</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="section-block">
+          <div class="panel panel-glass">
+            <div class="section-header">
+              <div>
+                <p class="eyebrow">Mapa Ambiental</p>
+                <h2>Itaquaquecetuba com pontos de atenção</h2>
+              </div>
+              <span class="tag">Águas ruins identificadas</span>
+            </div>
+            <div id="map"></div>
+            <div class="map-legend-panel">
+              <div class="map-legend-item"><span class="map-legend-dot" style="background:#ef4444"></span>Água contaminada</div>
+              <div class="map-legend-item"><span class="map-legend-dot" style="background:#f59e0b"></span>Risco médio</div>
+              <div class="map-legend-item"><span class="map-legend-dot" style="background:#22c55e"></span>Água tratada</div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="mapa.js"></script>
+  </body>
+</html>

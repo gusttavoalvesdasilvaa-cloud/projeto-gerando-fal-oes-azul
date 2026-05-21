@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EcoWater | Login</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="logo-block">
+          <div class="logo-badge">E</div>
+          <div>
+            <p class="logo-name">EcoWater</p>
+            <p class="logo-tag">Acesso ao painel</p>
+          </div>
+        </div>
+        <nav class="top-actions">
+          <a class="btn btn-secondary" href="index.html">Home</a>
+          <a class="btn btn-secondary" href="register.html">Cadastro</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="section-block auth-page">
+          <div class="panel panel-glass">
+            <div class="section-header">
+              <div>
+                <p class="eyebrow">Login</p>
+                <h2>Entre na sua conta EcoWater</h2>
+              </div>
+            </div>
+            <form id="login-form" class="auth-form">
+              <label>
+                Email
+                <input type="email" id="login-email" placeholder="seu@email.com" required />
+              </label>
+              <label>
+                Senha
+                <input type="password" id="login-password" placeholder="Digite sua senha" required />
+              </label>
+              <button class="btn btn-primary" type="submit">Entrar</button>
+            </form>
+            <p class="auth-message" id="auth-message">Faça login para gerenciar missões e pontos.</p>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="auth.js"></script>
+    <script>
+      const loginForm = document.getElementById('login-form');
+      const messageArea = document.getElementById('auth-message');
+
+      function showAuthMessage(message, success = false) {
+        messageArea.textContent = message;
+        messageArea.style.color = success ? '#86efac' : '#fda4af';
+      }
+
+      loginForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const email = document.getElementById('login-email').value.trim().toLowerCase();
+        const password = document.getElementById('login-password').value;
+        const result = loginUser(email, password);
+        if (result.success) {
+          showAuthMessage(`Bem-vindo, ${result.user.name}! Redirecionando...`, true);
+          setTimeout(() => {
+            window.location.href = 'missoes.html';
+          }, 800);
+        } else {
+          showAuthMessage(result.message, false);
+        }
+      });
+    </script>
+  </body>
+</html>
