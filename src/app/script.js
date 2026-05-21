@@ -56,6 +56,17 @@ const cityStates = [
   }
 ];
 
+// Dados de exemplo para evolução de um rio de Itaquaquecetuba
+const sampleRiver = {
+  name: 'Rio Itaquá',
+  neighborhood: 'Jardim São João',
+  evolution: [
+    { year: 2018, status: 'Alto nível de poluição e acúmulo de lixo nas margens' },
+    { year: 2020, status: 'Início de programa municipal de limpeza e monitoramento' },
+    { year: 2022, status: 'Instalação de pontos de coleta e pequenas estações de tratamento' },
+    { year: 2024, status: 'Melhora visível na água; biodiversidade em recuperação' }
+  ]
+};
 const telemetry = {
   score: 78,
   ph: 6.8,
@@ -304,20 +315,78 @@ function initializePanel() {
     phStatus.textContent = 'Água saudável';
   }
 
-  mapFrame.querySelectorAll('.map-marker').forEach((marker) => {
-    marker.addEventListener('click', () => {
-      const place = marker.dataset.place;
-      mapInfo.textContent = mapPlaceInfo[place] || 'Detalhes indisponíveis.';
+  if (mapFrame && mapInfo) {
+    mapFrame.querySelectorAll('.map-marker').forEach((marker) => {
+      marker.addEventListener('click', () => {
+        const place = marker.dataset.place;
+        mapInfo.textContent = mapPlaceInfo[place] || 'Detalhes indisponíveis.';
+      });
     });
-  });
+  }
 
   let currentCityIndex = 2;
   updateCityState(currentCityIndex);
 
-  toggleCityState.addEventListener('click', () => {
-    currentCityIndex = (currentCityIndex + 1) % cityStates.length;
-    updateCityState(currentCityIndex);
-  });
+  // Criar modal dinamicamente via JavaScript (para evitar depender de HTML estático)
+  const riverModalNodes = (function createRiverModal() {
+    const modal = document.createElement('div');
+    modal.id = 'river-modal';
+    modal.className = 'hidden';
+    modal.style.cssText = 'position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.6);z-index:9999;';
+
+    const dialog = document.createElement('div');
+    dialog.style.cssText = 'background:#fff;border-radius:8px;padding:20px;max-width:560px;width:90%;box-shadow:0 8px 24px rgba(0,0,0,0.3);position:relative;';
+
+    const closeBtn = document.createElement('button');
+    closeBtn.id = 'river-modal-close';
+    closeBtn.style.cssText = 'position:absolute;right:12px;top:8px;border:none;background:transparent;font-size:22px;cursor:pointer;';
+    closeBtn.textContent = '×';
+
+    const nameEl = document.createElement('h3');
+    nameEl.id = 'river-name';
+    nameEl.textContent = 'Nome do rio';
+
+    const neigh = document.createElement('p');
+    neigh.id = 'river-neighborhood';
+    neigh.textContent = 'Bairro: —';
+
+    const evo = document.createElement('div');
+    evo.id = 'river-evolution';
+    evo.style.cssText = 'margin-top:12px;display:flex;flex-direction:column;gap:8px;';
+
+    dialog.appendChild(closeBtn);
+    dialog.appendChild(nameEl);
+    dialog.appendChild(neigh);
+    dialog.appendChild(evo);
+    modal.appendChild(dialog);
+    document.body.appendChild(modal);
+
+    return { modal, closeBtn, nameEl, neigh, evo };
+  })();
+
+  function openRiverModal(river) {
+    riverModalNodes.nameEl.textContent = river.name;
+    riverModalNodes.neigh.textContent = `Bairro: ${river.neighborhood}`;
+    riverModalNodes.evo.innerHTML = '';
+    river.evolution.forEach((step) => {
+      const item = document.createElement('div');
+      item.style.padding = '8px';
+      item.style.borderLeft = '3px solid #06b6d4';
+      item.innerHTML = `<strong>${step.year}</strong> — ${step.status}`;
+      riverModalNodes.evo.appendChild(item);
+    });
+    riverModalNodes.modal.style.display = 'flex';
+    riverModalNodes.modal.classList.remove('hidden');
+  }
+
+  function closeRiverModal() {
+    riverModalNodes.modal.style.display = 'none';
+    riverModalNodes.modal.classList.add('hidden');
+  }
+
+  toggleCityState.addEventListener('click', () => openRiverModal(sampleRiver));
+  riverModalNodes.closeBtn.addEventListener('click', closeRiverModal);
+  riverModalNodes.modal.addEventListener('click', (ev) => { if (ev.target === riverModalNodes.modal) closeRiverModal(); });
 
   function updateCityState(index) {
     const state = cityStates[index];

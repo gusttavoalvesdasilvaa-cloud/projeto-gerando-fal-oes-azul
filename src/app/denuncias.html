@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EcoWater | Denúncias Ambientais</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="logo-block">
+          <div class="logo-badge">E</div>
+          <div>
+            <p class="logo-name">EcoWater</p>
+            <p class="logo-tag">Denúncias Ambientais</p>
+          </div>
+        </div>
+        <nav class="top-actions">
+          <a class="btn btn-secondary" href="index.html">Home</a>
+          <a class="btn btn-secondary" href="mapa.html">Mapa Ambiental</a>
+          <a class="btn btn-secondary" href="missoes.html">Missões</a>
+          <a class="btn btn-primary" href="denuncias.html">Denúncias</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero-panel">
+          <div class="hero-copy">
+            <p class="eyebrow">Denúncias Ambientais</p>
+            <h1>Registre ocorrências de forma rápida e acompanhe o progresso.</h1>
+            <p class="hero-text">Use foto, localização, tipo de denúncia e comentários para documentar vazamentos, poluição e problemas de saneamento em Itaquaquecetuba.</p>
+            <div class="hero-actions">
+              <a class="btn btn-glow" href="#report-form">Registrar denúncia</a>
+              <a class="btn btn-outline" href="#recent-reports">Ver painéis</a>
+            </div>
+          </div>
+          <div class="hero-status-card">
+            <div class="status-card">
+              <h2>Sistema de Denúncias</h2>
+              <div class="status-grid">
+                <div class="status-item red">
+                  <span class="status-value" id="status-grave">0</span>
+                  <span class="status-label">Graves</span>
+                </div>
+                <div class="status-item yellow">
+                  <span class="status-value" id="status-medium">0</span>
+                  <span class="status-label">Médias</span>
+                </div>
+                <div class="status-item green">
+                  <span class="status-value" id="status-resolved">0</span>
+                  <span class="status-label">Resolvidas</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section-block split-section report-form-section" id="report-form">
+          <div class="panel panel-glass">
+            <div class="section-header">
+              <div>
+                <p class="eyebrow">Formulário de Denúncia</p>
+                <h2>Registrar nova ocorrência</h2>
+              </div>
+              <span class="tag">Foto, local e descrição</span>
+            </div>
+            <div class="report-form">
+              <div class="field-group">
+                <label class="field-label" for="report-name">Nome</label>
+                <input class="input-control" id="report-name" type="text" placeholder="Seu nome ou apelido" />
+              </div>
+              <div class="field-group">
+                <label class="field-label" for="report-location">Localização</label>
+                <input class="input-control" id="report-location" type="text" placeholder="Bairro / endereço aproximado" />
+              </div>
+              <div class="field-group">
+                <label class="field-label" for="report-type">Tipo de denúncia</label>
+                <select class="select-control" id="report-type">
+                  <option value="">Selecione o tipo</option>
+                  <option value="Vazamento de água">Vazamento de água</option>
+                  <option value="Lixo nos rios">Lixo nos rios</option>
+                  <option value="Água escura/suja">Água escura/suja</option>
+                  <option value="Casas sem saneamento">Casas sem saneamento</option>
+                  <option value="Esgoto a céu aberto">Esgoto a céu aberto</option>
+                  <option value="Mau cheiro">Mau cheiro</option>
+                  <option value="Poluição da água">Poluição da água</option>
+                </select>
+              </div>
+              <div class="field-group">
+                <label class="field-label" for="report-description">Descrição</label>
+                <textarea class="textarea-control" id="report-description" rows="4" placeholder="Conte o que está acontecendo e como a situação afeta a comunidade."></textarea>
+              </div>
+              <div class="field-group">
+                <p class="field-label">Upload da imagem</p>
+                <div class="upload-actions">
+                  <button class="btn btn-outline" type="button" id="camera-button">Abrir câmera</button>
+                  <button class="btn btn-outline" type="button" id="gallery-button">Galeria</button>
+                </div>
+                <div class="field-hint">Use a câmera do dispositivo ou envie uma foto já existente.</div>
+                <input id="camera-input" type="file" accept="image/*" capture="environment" class="hidden" />
+                <input id="gallery-input" type="file" accept="image/*" class="hidden" />
+                <div id="image-preview" class="image-preview">Nenhuma imagem selecionada.</div>
+              </div>
+              <div class="field-group">
+                <p class="field-label">Avaliação</p>
+                <div class="star-rating" id="star-rating"></div>
+              </div>
+              <div class="field-group">
+                <label class="field-label" for="report-comment">Comentários</label>
+                <textarea class="textarea-control" id="report-comment" rows="3" placeholder="Adicione observações extras para ajudar a equipe local."></textarea>
+              </div>
+              <button class="btn btn-primary" id="submit-report" type="button">Enviar denúncia</button>
+              <p class="auth-message" id="denuncia-message"></p>
+            </div>
+          </div>
+
+          <div class="panel panel-glass">
+            <div class="section-header">
+              <div>
+                <p class="eyebrow">Mapa de Ocorrências</p>
+                <h2>Simulação de ocorrências por gravidade</h2>
+              </div>
+              <span class="tag">Visual interativo</span>
+            </div>
+            <div class="sim-map" id="sim-map"></div>
+            <div class="map-summary">
+              <div class="map-summary-item"><span class="status-pill red"></span><strong id="count-grave">0</strong> graves</div>
+              <div class="map-summary-item"><span class="status-pill yellow"></span><strong id="count-medium">0</strong> médias</div>
+              <div class="map-summary-item"><span class="status-pill green"></span><strong id="count-resolved">0</strong> resolvidas</div>
+            </div>
+            <div class="map-legend-panel">
+              <div class="map-legend-item"><span class="map-legend-dot red"></span>Grave</div>
+              <div class="map-legend-item"><span class="map-legend-dot yellow"></span>Médio</div>
+              <div class="map-legend-item"><span class="map-legend-dot green"></span>Resolvido</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section-block" id="recent-reports">
+          <div class="section-header">
+            <div>
+              <p class="eyebrow">Painel de Denúncias</p>
+              <h2>Casos recentes registrados</h2>
+            </div>
+            <span class="tag">Atualização imediata</span>
+          </div>
+          <div class="report-cards-grid" id="reports-grid"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="denuncias.js"></script>
+  </body>
+</html>
