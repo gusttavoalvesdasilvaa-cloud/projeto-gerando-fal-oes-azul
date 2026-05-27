@@ -172,8 +172,146 @@ button {
 
 .hero-status-card {
   display: grid;
+  gap: 18px;
   grid-template-columns: minmax(240px, 1fr);
   z-index: 1;
+}
+
+.location-card {
+  border-radius: 28px;
+  background: rgba(15, 23, 42, 0.94);
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  padding: 24px;
+  display: grid;
+  gap: 16px;
+}
+
+.location-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.location-instruction,
+.location-impact,
+#nearest-river-status {
+  margin: 0;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.location-details {
+  display: grid;
+  gap: 16px;
+}
+
+.river-summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.river-summary strong {
+  display: block;
+  font-size: 1.2rem;
+  margin-top: 8px;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.status-badge.success {
+  background: rgba(34, 197, 94, 0.18);
+  color: #a7f3d0;
+}
+
+.status-badge.warning {
+  background: rgba(251, 191, 36, 0.18);
+  color: #fde68a;
+}
+
+.status-badge.danger {
+  background: rgba(239, 68, 68, 0.18);
+  color: #fecaca;
+}
+
+.status-badge.cyan {
+  background: rgba(56, 189, 248, 0.18);
+  color: #bfdbfe;
+}
+
+.river-image-wrap {
+  border-radius: 24px;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(56, 189, 248, 0.08), rgba(15, 23, 42, 0.96));
+  min-height: 220px;
+}
+
+.river-image-wrap img {
+  width: 100%;
+  height: 100%;
+  min-height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+.ranking-card {
+  border-radius: 24px;
+  padding: 22px;
+  background: rgba(15, 23, 42, 0.92);
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  min-height: 240px;
+}
+
+.ranking-card h3 {
+  margin-top: 0;
+  margin-bottom: 14px;
+}
+
+.ranking-list {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: var(--text-muted);
+}
+
+.ranking-list li {
+  margin-bottom: 10px;
+  line-height: 1.75;
+}
+
+.hidden {
+  display: none;
+}
+
+.map-info {
+  margin-top: 0;
+}
+
+@media (min-width: 1000px) {
+  .hero-status-card {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 780px) {
+  .location-card,
+  .status-card,
+  .ranking-card {
+    padding: 20px;
+  }
 }
 
 .status-card {

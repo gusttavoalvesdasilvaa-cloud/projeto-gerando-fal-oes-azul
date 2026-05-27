@@ -53,6 +53,31 @@
                 </div>
               </div>
             </div>
+            <div class="location-card">
+              <div class="location-header">
+                <div>
+                  <p class="eyebrow">Localização do usuário</p>
+                  <h2>Permita sua posição</h2>
+                </div>
+                <button class="btn btn-outline" id="request-location">Permitir localização</button>
+              </div>
+              <p class="location-instruction">Use sua localização para identificar o rio mais próximo, acompanhar risco ambiental e ver uma imagem do trecho.</p>
+              <div class="location-details hidden" id="location-details">
+                <div class="river-summary">
+                  <div>
+                    <span class="status-label">Rio mais próximo</span>
+                    <strong id="nearest-river-name">Sem dados</strong>
+                    <span id="nearest-river-distance">-- km</span>
+                  </div>
+                  <span class="status-badge cyan" id="nearest-river-class">--</span>
+                </div>
+                <p id="nearest-river-status">Aguardando permissão de localização.</p>
+                <div class="river-image-wrap">
+                  <img id="riverImage" loading="lazy" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80" alt="Imagem do trecho próximo ao usuário" />
+                </div>
+                <p class="location-impact" id="environmental-impact">Impacto ambiental será exibido aqui.</p>
+              </div>
+            </div>
           </div>
           <div class="hero-animation">
             <div class="wave"></div>
@@ -79,7 +104,7 @@
               </div>
               <a class="btn btn-small" href="mapa.html">Abrir mapa</a>
             </div>
-            <div class="map-card static-map-preview">
+            <div class="map-card static-map-preview" id="map-frame">
               <div class="map-legend">
                 <div><span class="legend-dot red"></span>Água contaminada</div>
                 <div><span class="legend-dot yellow"></span>Risco médio</div>
@@ -89,6 +114,7 @@
               <div class="map-preview-text">
                 Explore um mapa completo de Itaquaquecetuba e identifique pontos de águas ruins, estações de tratamento, áreas de risco e regiões sustentáveis.
               </div>
+              <div class="map-info" id="map-info">Aguardando localização para avaliar risco local.</div>
             </div>
           </div>
 
@@ -169,17 +195,21 @@
               <span class="tag">Pontuação ecológica</span>
             </div>
             <div class="reputation-grid">
-              <div class="reputation-card">
-                <span>Iniciante Ambiental</span>
-                <p>Comece a jornada ajudando rios e comunidades.</p>
+              <div class="ranking-card">
+                <h3>Estados com rios mais limpos</h3>
+                <ol id="clean-states-list" class="ranking-list"></ol>
               </div>
-              <div class="reputation-card">
-                <span>Protetor dos Rios</span>
-                <p>Missões completadas e sistemas de saneamento instalados.</p>
+              <div class="ranking-card">
+                <h3>Rios mais poluídos</h3>
+                <ol id="polluted-rivers-list" class="ranking-list"></ol>
               </div>
-              <div class="reputation-card">
-                <span>Guardião da Água</span>
-                <p>Cidades mais limpas, água potável e ecosistemas restaurados.</p>
+              <div class="ranking-card">
+                <h3>Protetores dos rios</h3>
+                <ul id="river-guardians-list" class="ranking-list"></ul>
+              </div>
+              <div class="ranking-card">
+                <h3>Melhorias ambientais recentes</h3>
+                <ul id="improvements-list" class="ranking-list"></ul>
               </div>
             </div>
           </div>
