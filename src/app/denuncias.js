@@ -53,12 +53,19 @@ function updateCounters() {
   const medium = reports.filter((item) => item.severity === 'medium').length;
   const resolved = reports.filter((item) => item.severity === 'resolved').length;
 
-  document.getElementById('status-grave').textContent = grave;
-  document.getElementById('status-medium').textContent = medium;
-  document.getElementById('status-resolved').textContent = resolved;
-  document.getElementById('count-grave').textContent = grave;
-  document.getElementById('count-medium').textContent = medium;
-  document.getElementById('count-resolved').textContent = resolved;
+  const elStatusGrave = document.getElementById('status-grave');
+  const elStatusMedium = document.getElementById('status-medium');
+  const elStatusResolved = document.getElementById('status-resolved');
+  if (elStatusGrave) elStatusGrave.textContent = grave;
+  if (elStatusMedium) elStatusMedium.textContent = medium;
+  if (elStatusResolved) elStatusResolved.textContent = resolved;
+
+  const elCountGrave = document.getElementById('count-grave');
+  const elCountMedium = document.getElementById('count-medium');
+  const elCountResolved = document.getElementById('count-resolved');
+  if (elCountGrave) elCountGrave.textContent = grave;
+  if (elCountMedium) elCountMedium.textContent = medium;
+  if (elCountResolved) elCountResolved.textContent = resolved;
 }
 
 function resetForm() {
@@ -145,20 +152,58 @@ function renderReports() {
   });
 }
 
-function renderMap() {
-  const map = document.getElementById('sim-map');
-  if (!map) return;
+const severityInfo = {
+  baixa: {
+    title: 'Baixa',
+    meaning: 'Ocorrências com impacto pequeno e sem risco imediato à saúde ou ao meio ambiente.',
+    when: 'Quando a situação é pontual, sem vazamento contínuo, sem contato direto com água potável e sem risco de contaminação ampla.',
+    why: 'Denunciar permite monitoramento e limpeza preventiva antes que o problema piore.'
+  },
+  media: {
+    title: 'Média',
+    meaning: 'Ocorrências que afetam a qualidade ou uso local da água, com potencial de piora.',
+    when: 'Quando há acúmulo de lixo, odor persistente, ou alterações visíveis na cor da água.',
+    why: 'Ajuda as equipes a priorizar ações de contenção e prevenção.'
+  },
+  alta: {
+    title: 'Alta',
+    meaning: 'Ocorrências com impacto significativo, como vazamentos de esgoto ou poluição visível extensa.',
+    when: 'Quando há despejo contínuo, grande volume de lixo ou risco claro à saúde pública.',
+    why: 'Exige resposta rápida de limpeza e investigação para evitar contaminação.'
+  },
+  critica: {
+    title: 'Crítica',
+    meaning: 'Ocorrências que representam risco imediato à saúde humana ou ao ecossistema.',
+    when: 'Quando existem sinais de contaminação severa, grandes vazamentos, ou risco de acidente ambiental.',
+    why: 'Necessário acionamento urgente de autoridades e medidas de emergência.'
+  }
+};
 
-  map.innerHTML = '';
-  mapNodes.forEach((node) => {
-    const button = document.createElement('button');
-    button.type = 'button';
-    button.className = `sim-node ${node.severity}`;
-    button.innerHTML = `<strong>${node.label}</strong><span>${node.note}</span>`;
-    button.addEventListener('click', () => {
-      showMessage(`Local: ${node.label}. ${node.note}`, true);
+function showSeverityInfo(key) {
+  const info = severityInfo[key];
+  const panel = document.getElementById('severity-info');
+  if (!info || !panel) return;
+  const title = document.getElementById('severity-title');
+  const meaning = document.getElementById('severity-meaning');
+  const when = document.getElementById('severity-when');
+  const why = document.getElementById('severity-why');
+  if (title) title.textContent = `Gravidade: ${info.title}`;
+  if (meaning) meaning.innerHTML = `<strong>Significado:</strong> ${info.meaning}`;
+  if (when) when.innerHTML = `<strong>Quando utilizar:</strong> ${info.when}`;
+  if (why) why.innerHTML = `<strong>Por que é importante denunciar:</strong> ${info.why}`;
+}
+
+function renderSeverityPanel() {
+  const container = document.querySelector('.severity-education');
+  if (!container) return;
+
+  // attach button handlers
+  const buttons = container.querySelectorAll('.severity-btn');
+  buttons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const key = btn.dataset.severity;
+      showSeverityInfo(key);
     });
-    map.appendChild(button);
   });
 }
 
@@ -169,15 +214,18 @@ function mapSeverityStatus() {
     return summary;
   }, {});
 
-  document.getElementById('count-grave').textContent = reportsByType.grave || 0;
-  document.getElementById('count-medium').textContent = reportsByType.medium || 0;
-  document.getElementById('count-resolved').textContent = reportsByType.resolved || 0;
+  const elCountGrave = document.getElementById('count-grave');
+  const elCountMedium = document.getElementById('count-medium');
+  const elCountResolved = document.getElementById('count-resolved');
+  if (elCountGrave) elCountGrave.textContent = reportsByType.grave || 0;
+  if (elCountMedium) elCountMedium.textContent = reportsByType.medium || 0;
+  if (elCountResolved) elCountResolved.textContent = reportsByType.resolved || 0;
 }
 
 function initDenuncias() {
   updateStarDisplay();
   renderReports();
-  renderMap();
+  renderSeverityPanel();
   updateCounters();
   mapSeverityStatus();
 

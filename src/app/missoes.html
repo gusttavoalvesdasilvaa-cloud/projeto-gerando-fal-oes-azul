@@ -29,12 +29,75 @@
             <div class="section-header">
               <div>
                 <p class="eyebrow">Missões Ambientais</p>
-                <h2>Complete missões e ganhe pontos</h2>
+                <h2>Tarefas diárias de preservação da água</h2>
               </div>
-              <span class="tag">Incentivo à preservação</span>
+              <span class="tag">Faça em casa</span>
             </div>
-            <div id="user-summary" class="water-result">Carregando status do usuário...</div>
-            <div id="missions-list" class="missions-grid"></div>
+            <p class="auth-message" style="margin-top: -0.25rem; margin-bottom: 1rem;">
+              Pontuação Total: <strong id="total-pontos">0</strong> pontos
+            </p>
+            <div id="mission-alert" class="mission-alert hidden"></div>
+            <div class="daily-missions-grid">
+              <article class="daily-mission-card">
+                <div class="mission-card-top">
+                  <span class="mission-icon">☔</span>
+                  <h3>Guardar água da chuva</h3>
+                </div>
+                <p>Use água de chuva para lavar carro ou calçada.</p>
+                <div class="mission-card-footer">
+                  <span class="mission-points">+50 pontos</span>
+                  <button class="mission-button" type="button" data-points="50">Concluir</button>
+                </div>
+              </article>
+
+              <article class="daily-mission-card">
+                <div class="mission-card-top">
+                  <span class="mission-icon">🔎</span>
+                  <h3>Patrulha das torneiras</h3>
+                </div>
+                <p>Verifique se há vazamentos ou goteiras nas torneiras.</p>
+                <div class="mission-card-footer">
+                  <span class="mission-points">+30 pontos</span>
+                  <button class="mission-button" type="button" data-points="30">Concluir</button>
+                </div>
+              </article>
+
+              <article class="daily-mission-card">
+                <div class="mission-card-top">
+                  <span class="mission-icon">🚿</span>
+                  <h3>Banho de 5 minutos</h3>
+                </div>
+                <p>Feche o registro ao se ensaboar para economizar água.</p>
+                <div class="mission-card-footer">
+                  <span class="mission-points">+40 pontos</span>
+                  <button class="mission-button" type="button" data-points="40">Concluir</button>
+                </div>
+              </article>
+
+              <article class="daily-mission-card">
+                <div class="mission-card-top">
+                  <span class="mission-icon">🪣</span>
+                  <h3>Balde no chuveiro</h3>
+                </div>
+                <p>Coloque um balde para coletar água antes de esquentar o chuveiro.</p>
+                <div class="mission-card-footer">
+                  <span class="mission-points">+40 pontos</span>
+                  <button class="mission-button" type="button" data-points="40">Concluir</button>
+                </div>
+              </article>
+
+              <article class="daily-mission-card">
+                <div class="mission-card-top">
+                  <span class="mission-icon">🧺</span>
+                  <h3>Máquina cheia</h3>
+                </div>
+                <p>Lave roupas apenas com a máquina em capacidade máxima.</p>
+                <div class="mission-card-footer">
+                  <span class="mission-points">+50 pontos</span>
+                  <button class="mission-button" type="button" data-points="50">Concluir</button>
+                </div>
+              </article>
+            </div>
             <p class="auth-message" id="mission-message"></p>
           </div>
         </section>
@@ -42,6 +105,61 @@
     </div>
 
     <script src="auth.js"></script>
-    <script src="missions.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const alertBox = document.getElementById('mission-alert');
+        const pointsLabel = document.getElementById('total-pontos');
+        const buttons = document.querySelectorAll('.mission-button');
+        let totalPontos = 0;
+        let completedCount = 0;
+
+        function showAlert(message) {
+          if (!alertBox) return;
+          alertBox.textContent = message;
+          alertBox.classList.remove('hidden');
+          alertBox.classList.add('visible');
+          setTimeout(() => {
+            alertBox.classList.remove('visible');
+            alertBox.classList.add('hidden');
+          }, 2500);
+        }
+
+        function launchConfetti() {
+          if (typeof confetti === 'function') {
+            confetti({
+              particleCount: 140,
+              spread: 90,
+              origin: { y: 0.6 }
+            });
+          }
+        }
+
+        buttons.forEach((button) => {
+          button.addEventListener('click', () => {
+            if (button.disabled) return;
+
+            const points = Number(button.dataset.points || 0);
+            totalPontos += points;
+
+            if (pointsLabel) {
+              pointsLabel.textContent = totalPontos;
+            }
+
+            button.disabled = true;
+            button.textContent = 'Concluído ✓';
+            button.classList.add('completed');
+
+            completedCount += 1;
+            showAlert(`Você ganhou ${points} pontos! Total: ${totalPontos} pontos.`);
+
+            if (completedCount === buttons.length) {
+              launchConfetti();
+              showAlert('Meta do dia concluída! Todos os desafios foram finalizados.');
+            }
+          });
+        });
+      });
+    </script>
   </body>
 </html>

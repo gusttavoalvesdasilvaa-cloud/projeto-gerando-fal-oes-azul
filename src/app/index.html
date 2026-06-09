@@ -44,10 +44,7 @@
                   <span class="status-value" id="status-score">78%</span>
                   <span class="status-label">Saúde Ambiental</span>
                 </div>
-                <div class="status-item green">
-                  <span class="status-value" id="status-ph">6.8</span>
-                  <span class="status-label">Nível de pH</span>
-                </div>
+                <!-- pH status removed -->
                 <div class="status-item cyan">
                   <span class="status-value" id="status-robots">3</span>
                   <span class="status-label">Robôs ativos</span>
@@ -62,7 +59,7 @@
                 </div>
                 <button class="btn btn-outline" id="request-location">Permitir localização</button>
               </div>
-              <p class="location-instruction">Use sua localização para identificar o rio mais próximo, acompanhar risco ambiental e ver uma imagem do trecho.</p>
+              <p class="location-instruction">Use sua localização para identificar o rio mais próximo e acompanhar o risco ambiental.</p>
               <div class="location-details hidden" id="location-details">
                 <div class="river-summary">
                   <div>
@@ -73,15 +70,9 @@
                   <span class="status-badge cyan" id="nearest-river-class">--</span>
                 </div>
                 <p id="nearest-river-status">Aguardando permissão de localização.</p>
-                <div class="river-image-wrap">
-                  <img id="riverImage" loading="lazy" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80" alt="Imagem do trecho próximo ao usuário" />
-                </div>
                 <p class="location-impact" id="environmental-impact">Impacto ambiental será exibido aqui.</p>
               </div>
             </div>
-          </div>
-          <div class="hero-animation">
-            <div class="wave"></div>
           </div>
         </section>
 
@@ -119,30 +110,7 @@
             </div>
           </div>
 
-          <div class="panel panel-glass">
-            <div class="panel-header">
-              <div>
-                <p class="eyebrow">Sistema de Medição de pH</p>
-                <h2>Qualidade da água em tempo real</h2>
-              </div>
-              <span class="tag">Barra colorida</span>
-            </div>
-            <div class="ph-meter">
-              <div class="ph-display">
-                <span>Nível de pH</span>
-                <strong id="ph-value">6.8</strong>
-              </div>
-              <div class="ph-scale">
-                <span>4.0</span>
-                <span>7.0</span>
-                <span>10.0</span>
-              </div>
-              <div class="ph-bar-outer">
-                <div class="ph-bar-inner" id="ph-bar"></div>
-              </div>
-              <p class="ph-status" id="ph-status">Água saudável</p>
-            </div>
-          </div>
+          <!-- pH card removed as requested -->
         </section>
 
         <section class="section-block">
@@ -156,7 +124,7 @@
           <div class="cards-grid" id="robots-list"></div>
         </section>
 
-        <section class="section-block">
+        <section class="section-block" id="saneamento">
           <div class="panel panel-glass treatment-panel">
             <div class="section-header">
               <div>
@@ -175,7 +143,7 @@
           </div>
         </section>
 
-        <section class="section-block missions-block">
+        <section class="section-block missions-block" id="missoes">
           <div class="section-header">
             <div>
               <p class="eyebrow">Sistema de Missões Ambientais</p>
@@ -186,7 +154,7 @@
           <div class="missions-grid" id="missions-list"></div>
         </section>
 
-        <section class="section-block reputation-block">
+        <section class="section-block reputation-block" id="ranking">
           <div class="panel panel-glass">
             <div class="section-header">
               <div>
@@ -197,47 +165,64 @@
             </div>
             <div class="reputation-grid">
               <div class="ranking-card">
-                <h3>Estados com rios mais limpos</h3>
-                <ol id="clean-states-list" class="ranking-list"></ol>
+                <h3>Top 20 Cidades Sustentáveis</h3>
+                <p class="field-hint">Posição • Nome da cidade • Pontuação sustentável</p>
+                <div id="lista-cidades" class="ranking-list"></div>
               </div>
               <div class="ranking-card">
-                <h3>Rios mais poluídos</h3>
-                <ol id="polluted-rivers-list" class="ranking-list"></ol>
+                <h3>Top 20 Bairros Sustentáveis</h3>
+                <p class="field-hint">Posição • Nome do bairro • Pontuação sustentável</p>
+                <div id="lista-bairros" class="ranking-list"></div>
               </div>
               <div class="ranking-card">
-                <h3>Protetores dos rios</h3>
-                <ul id="river-guardians-list" class="ranking-list"></ul>
-              </div>
-              <div class="ranking-card">
-                <h3>Melhorias ambientais recentes</h3>
-                <ul id="improvements-list" class="ranking-list"></ul>
+                <h3>Maiores Evoluções Ambientais</h3>
+                <p class="field-hint">Cidade ou bairro • Crescimento da pontuação • Percentual de melhoria</p>
+                <div id="lista-evolucoes" class="ranking-list"></div>
               </div>
             </div>
-          </div>
-        </section>
-
-        <section class="section-block city-evolution-block">
-          <div class="section-header">
-            <div>
-              <p class="eyebrow">Evolução Dinâmica das Cidades</p>
-              <h2>Impacto das ações ambientais</h2>
-            </div>
-            <span class="tag">Mudança visual automática</span>
-          </div>
-          <div class="city-evolution-card" id="city-evolution-card">
-            <div>
-              <h3 id="city-title">Cidade em Recuperação</h3>
-              <p id="city-summary">Mostre a transição de um ambiente poluído para uma cidade sustentável com água limpa, árvores e vida saudável.</p>
-            </div>
-            <div class="city-status-list">
-              <div><strong>Água limpa</strong><span id="city-feature-1">Em progresso</span></div>
-              <div><strong>Árvores</strong><span id="city-feature-2">Restauradas</span></div>
-              <div><strong>Saúde</strong><span id="city-feature-3">Melhorando</span></div>
-            </div>
-            <button class="btn btn-small" id="toggle-city-state">Ver estado</button>
           </div>
         </section>
       </main>
+
+      <footer class="app-footer" aria-label="Rodapé do aplicativo">
+        <div class="footer-grid">
+          <section class="footer-card footer-brand">
+            <p class="eyebrow">EcoWater</p>
+            <h3>Projeto voltado para conscientização ambiental, preservação dos recursos hídricos e incentivo a práticas sustentáveis.</h3>
+            <p class="footer-text">Promover a educação ambiental e incentivar a participação da população na preservação da água e do meio ambiente.</p>
+          </section>
+
+          <section class="footer-card">
+            <h3>Links rápidos</h3>
+            <ul class="footer-links">
+              <li><a href="index.html">Início</a></li>
+              <li><a href="denuncias.html">Denúncias Ambientais</a></li>
+              <li><a href="#ranking">Ranking Sustentável</a></li>
+              <li><a href="#saneamento">Saneamento</a></li>
+              <li><a href="#missoes">Missões Ambientais</a></li>
+            </ul>
+          </section>
+
+          <section class="footer-card">
+            <h3>Objetivo</h3>
+            <p class="footer-text">Promover a educação ambiental e incentivar a participação da população na preservação da água e do meio ambiente.</p>
+            <p class="footer-text">Desenvolvido para fins educacionais. Projeto EcoWater. Versão 1.0.</p>
+          </section>
+
+          <section class="footer-card">
+            <h3>Contato</h3>
+            <ul class="footer-links footer-contact">
+              <li>E-mail: contato@ecowater.org</li>
+              <li>Redes sociais: @EcoWater</li>
+            </ul>
+          </section>
+        </div>
+
+        <div class="footer-bottom">
+          <p>© 2026 EcoWater - Todos os direitos reservados.</p>
+          <p class="footer-note">Informações do projeto para fins educacionais e conscientização ambiental.</p>
+        </div>
+      </footer>
     </div>
 
     <script src="script.js"></script>

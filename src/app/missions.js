@@ -83,19 +83,32 @@ function getCompletedCount(email) {
   return progress[email] ? progress[email].length : 0;
 }
 
+function getReportCount() {
+  const reports = JSON.parse(localStorage.getItem('eco-reports') || '[]');
+  return Array.isArray(reports) ? reports.length : 0;
+}
+
+function calculateImpactEstimate(missionsCompleted, reportsCount) {
+  const impactScore = missionsCompleted * 10 + reportsCount * 5;
+  return `${impactScore} pontos estimados de impacto`; 
+}
+
 function renderMissions(user) {
   const missionsList = document.getElementById('missions-list');
   missionsList.innerHTML = '';
-  const currentPoints = getUserPoints(user.email);
+  const completedCount = getCompletedCount(user.email);
+  const reportsCount = getReportCount();
+  const impactEstimate = calculateImpactEstimate(completedCount, reportsCount);
 
   document.getElementById('user-summary').innerHTML = `
     <strong>${user.name}</strong><br />
-    Pontos ambientais: <strong>${currentPoints}</strong><br />
-    Missões concluídas: <strong>${getCompletedCount(user.email)}</strong>
+    Missões concluídas: <strong>${completedCount}</strong><br />
+    Denúncias realizadas: <strong>${reportsCount}</strong><br />
+    Impacto estimado: <strong>${impactEstimate}</strong>
   `;
 
   const messageArea = document.getElementById('mission-message');
-  messageArea.textContent = 'Complete missões para ganhar pontos e subir de nível.';
+  messageArea.textContent = 'Acompanhe suas ações ambientais reais abaixo.';
   messageArea.style.color = '#c7d2fe';
 
   missionsData.forEach((mission) => {
@@ -114,18 +127,11 @@ function renderMissions(user) {
     const button = card.querySelector('button');
     button.addEventListener('click', () => {
       if (completed) return;
-      const earned = markMissionCompleted(user.email, mission.id) ? updateUserPoints(user.email, mission.points) : getUserPoints(user.email);
-      renderMissions(user);
-      messageArea.innerHTML = `Missão concluída! Você ganhou ${mission.points} pontos.<br /><strong>Impacto:</strong> ${mission.impact}`;
-      messageArea.style.color = '#86efac';
-      document.getElementById('user-summary').innerHTML = `
-        <strong>${user.name}</strong><br />
-        Pontos ambientais: <strong>${earned}</strong><br />
-        Missões concluídas: <strong>${getCompletedCount(user.email)}</strong>
-      `;
-    });
-
-    missionsList.appendChild(card);
+        markMissionCompleted(user.email, mission.id);
+        updateUserPoints(user.email, mission.points);
+        renderMissions(user);
+        messageArea.innerHTML = `Missão concluída! Você ganhou ${mission.points} pontos.`;
+        messageArea.style.color = '#86efac';
   });
 }
 

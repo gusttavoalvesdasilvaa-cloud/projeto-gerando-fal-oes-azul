@@ -7,7 +7,7 @@ const alerts = [
   },
   {
     title: 'pH perigoso no afluente central',
-    description: 'Nível ácido abaixo de 6,0. A água exige neutralização urgente para recuperação do ecossistema.',
+    description: 'Nível ácido abaixo de 6,0. A água exige neutralização urgente para proteger o ecossistema.',
     type: 'warning',
     icon: '🧪'
   },
@@ -26,37 +26,51 @@ const robots = [
 ];
 
 const missions = [
-  { title: 'Limpar rios contaminados', status: 'Em andamento', reward: '150 pts ecológicos' },
-  { title: 'Instalar saneamento básico', status: 'Pendente', reward: '200 pts ecológicos' },
-  { title: 'Construir estação de tratamento', status: 'Novo', reward: '250 pts ecológicos' }
+  {
+    title: 'Guardar água da chuva',
+    status: 'Em andamento',
+    reward: '50 pts ecológicos',
+    description: 'Usar para lavar carros, calçadas ou quintais.'
+  },
+  {
+    title: 'Patrulha das torneiras',
+    status: 'Pendente',
+    reward: '30 pts ecológicos',
+    description: 'Checar e consertar torneiras pingando na casa.'
+  },
+  {
+    title: 'Banho focado de 5 minutos',
+    status: 'Novo',
+    reward: '40 pts ecológicos',
+    description: 'Fechar o registro do chuveiro ao se ensaboar.'
+  }
 ];
 
 const mapPlaceInfo = {
-  'Zona Norte': 'Área com água contaminada e risco elevado. Necessária ação imediata para recuperar a fauna e evitar doenças.',
+  'Zona Norte': 'Área com água contaminada e risco elevado. Ação imediata ajuda a evitar doenças e proteger a fauna.',
   'Afluente Azul': 'Região com água potável e estações de tratamento próximas. Bom foco para expansão de redes sustentáveis.',
   'Estação Sul': 'Local com saneamento básico em funcionamento e monitoramento ativo. Ótimo ponto para educação ambiental.',
-  'Parque Oeste': 'Região sustentável com áreas verdes e água tratável. Modelo de recuperação para outras cidades.'
+  'Parque Oeste': 'Região sustentável com áreas verdes e água tratável. Exemplo de eficiência no tratamento local.'
 };
 
 const cityStates = [
   {
     title: 'Cidade Sustentável',
-    summary: 'Água limpa, árvores recuperadas e vida aquática saudável. Cidades com tratamento e saneamento eficazes.',
+    summary: 'Água limpa, árvores saudáveis e vida aquática equilibrada. Cidades com tratamento e saneamento eficazes.',
     features: ['Água limpa', 'Árvores saudáveis', 'Vida selvagem equilibrada']
   },
   {
     title: 'Transição Ambiental',
-    summary: 'Regiões em recuperação com rios sendo limpos e saneamento sendo instalado. O progresso está visível.',
+    summary: 'Regiões em progresso com rios sendo limpos e saneamento sendo instalado. O progresso está visível.',
     features: ['Poluição em queda', 'Saneamento em expansão', 'Corrida por água potável']
   },
   {
-    title: 'Cidade em Recuperação',
+    title: 'Cidade em Melhoria',
     summary: 'Água escura e lixo acumulado exigem ações urgentes de remoção de poluentes e tratamento de esgoto.',
     features: ['Lixo acumulado', 'Água contaminada', 'Risco de saúde']
   }
 ];
 
-<<<<<<< HEAD
 const riverNetwork = [
   {
     name: 'Trecho A',
@@ -134,14 +148,60 @@ async function reverseGeocode(lat, lon) {
   }
 }
 
-const sustainabilityRanking = {
-  cleanStates: ['São Paulo', 'Minas Gerais', 'Goiás', 'Espírito Santo'],
-  pollutedRivers: ['Trecho C', 'Rio Pinheiros', 'Rio Doce', 'Rio Amazonas'],
-  protectors: ['Projeto Azul', 'Instituto Águas Claras', 'Comunidade Guardiões do Rio'],
-  improvements: ['Recuperação de nascentes', 'Travessias de resíduos reduzidas', 'Monitoramento de pH em tempo real', 'Proteção de matas ciliares']
-};
+const cidadesSustentaveis = [
+  { nome: 'Curitiba', pontos: 98 },
+  { nome: 'Florianópolis', pontos: 96 },
+  { nome: 'Campinas', pontos: 94 },
+  { nome: 'Maringá', pontos: 92 },
+  { nome: 'São Paulo', pontos: 91 },
+  { nome: 'Porto Alegre', pontos: 90 },
+  { nome: 'Belo Horizonte', pontos: 89 },
+  { nome: 'Brasília', pontos: 88 },
+  { nome: 'Recife', pontos: 87 },
+  { nome: 'Salvador', pontos: 86 },
+  { nome: 'Manaus', pontos: 85 },
+  { nome: 'Fortaleza', pontos: 84 },
+  { nome: 'Natal', pontos: 83 },
+  { nome: 'Vitória', pontos: 82 },
+  { nome: 'João Pessoa', pontos: 81 },
+  { nome: 'Ribeirão Preto', pontos: 80 },
+  { nome: 'Joinville', pontos: 79 },
+  { nome: 'Londrina', pontos: 78 },
+  { nome: 'Campo Grande', pontos: 77 },
+  { nome: 'São José dos Campos', pontos: 76 }
+];
 
-=======
+const bairrosSustentaveis = [
+  { nome: 'Centro', pontos: 97 },
+  { nome: 'Jardim Europa', pontos: 95 },
+  { nome: 'Vila Olímpia', pontos: 94 },
+  { nome: 'Moema', pontos: 92 },
+  { nome: 'Tatuapé', pontos: 91 },
+  { nome: 'Pinheiros', pontos: 90 },
+  { nome: 'Itaim Bibi', pontos: 89 },
+  { nome: 'Liberdade', pontos: 88 },
+  { nome: 'Parque das Nações', pontos: 87 },
+  { nome: 'Santa Cecília', pontos: 86 },
+  { nome: 'Morro da Saúde', pontos: 85 },
+  { nome: 'Vila Mariana', pontos: 84 },
+  { nome: 'Jardim Botânico', pontos: 83 },
+  { nome: 'Santo Antônio', pontos: 82 },
+  { nome: 'Vila Nova', pontos: 81 },
+  { nome: 'Cidade Alta', pontos: 80 },
+  { nome: 'Bosque dos Ipês', pontos: 79 },
+  { nome: 'Praia da Costa', pontos: 78 },
+  { nome: 'Jardim das Palmeiras', pontos: 77 },
+  { nome: 'Parque Industrial', pontos: 76 }
+];
+
+const evolucoesAmbientais = [
+  { nome: 'Itaquaquecetuba', crescimento: '+15%' },
+  { nome: 'Suzano', crescimento: '+12%' },
+  { nome: 'Mogi das Cruzes', crescimento: '+10%' },
+  { nome: 'Arujá', crescimento: '+9%' },
+  { nome: 'Poá', crescimento: '+8%' }
+];
+
 // Dados de exemplo para evolução de um rio de Itaquaquecetuba
 const sampleRiver = {
   name: 'Rio Itaquá',
@@ -150,13 +210,12 @@ const sampleRiver = {
     { year: 2018, status: 'Alto nível de poluição e acúmulo de lixo nas margens' },
     { year: 2020, status: 'Início de programa municipal de limpeza e monitoramento' },
     { year: 2022, status: 'Instalação de pontos de coleta e pequenas estações de tratamento' },
-    { year: 2024, status: 'Melhora visível na água; biodiversidade em recuperação' }
+    { year: 2024, status: 'Melhora visível na água; maior biodiversidade observada' }
   ]
 };
->>>>>>> a9d17da80ad8ab2758c365c54a2045394768c4d0
+
 const telemetry = {
   score: 78,
-  ph: 6.8,
   robotsActive: 2
 };
 
@@ -225,7 +284,6 @@ function showLocationError(message) {
 
 function refreshTelemetry(river, distanceKm, locationInfo = {}) {
   telemetry.score = Math.round(river.quality);
-  telemetry.ph = parseFloat((6.2 + ((telemetry.score - 30) / 65) * 3.2).toFixed(1));
   telemetry.robotsActive = Math.max(1, 2 + Math.round((Math.random() - 0.4) * 1));
 
   const nearestName = document.getElementById('nearest-river-name');
@@ -282,40 +340,14 @@ function refreshTelemetry(river, distanceKm, locationInfo = {}) {
 }
 
 function updateStatusDisplay() {
-  const phValue = document.getElementById('ph-value');
-  const phBar = document.getElementById('ph-bar');
-  const phStatus = document.getElementById('ph-status');
   const statusScore = document.getElementById('status-score');
-  const statusPh = document.getElementById('status-ph');
   const statusRobots = document.getElementById('status-robots');
 
   if (statusScore) {
     statusScore.textContent = `${telemetry.score}%`;
   }
-  if (statusPh) {
-    statusPh.textContent = telemetry.ph.toFixed(1);
-  }
   if (statusRobots) {
     statusRobots.textContent = telemetry.robotsActive;
-  }
-  if (phValue) {
-    phValue.textContent = telemetry.ph.toFixed(1);
-  }
-  if (phBar) {
-    const barWidth = Math.min(Math.max(((telemetry.ph - 4) / 6) * 100, 0), 100);
-    phBar.style.width = `${barWidth}%`;
-  }
-  if (phBar && phStatus) {
-    if (telemetry.ph <= 6) {
-      phBar.style.background = '#f97316';
-      phStatus.textContent = 'Água perigosa';
-    } else if (telemetry.ph < 7.2) {
-      phBar.style.background = '#fbbf24';
-      phStatus.textContent = 'Água em atenção';
-    } else {
-      phBar.style.background = '#22c55e';
-      phStatus.textContent = 'Água saudável';
-    }
   }
 }
 
@@ -333,7 +365,7 @@ function refreshAlerts(river, distanceKm) {
     },
     {
       title: 'Área de risco ambiental',
-      description: `Monitoramento indica ${classifyImpact(river.quality).label} no trecho do ${river.name}.`, 
+      description: `Monitoramento indica ${classifyImpact(river.quality).label} no trecho do ${river.name}.`,
       type: river.quality >= 55 ? 'success' : 'warning',
       icon: river.quality >= 55 ? '♻️' : '⚠️'
     }
@@ -348,24 +380,31 @@ function updateMapInfo(river, classificationLabel) {
   mapInfo.textContent = `Risco em ${river.state}: ${classificationLabel} no ${river.name}. Áreas de risco são atualizadas com a sua localização.`;
 }
 
-function loadRankings() {
-  const cleanStatesList = document.getElementById('clean-states-list');
-  const pollutedRiversList = document.getElementById('polluted-rivers-list');
-  const riverGuardiansList = document.getElementById('river-guardians-list');
-  const improvementsList = document.getElementById('improvements-list');
+function renderRankingList(containerId, items, formatter) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
 
-  if (cleanStatesList) {
-    cleanStatesList.innerHTML = sustainabilityRanking.cleanStates.map((state) => `<li>${state}</li>`).join('');
-  }
-  if (pollutedRiversList) {
-    pollutedRiversList.innerHTML = sustainabilityRanking.pollutedRivers.map((river) => `<li>${river}</li>`).join('');
-  }
-  if (riverGuardiansList) {
-    riverGuardiansList.innerHTML = sustainabilityRanking.protectors.map((guardian) => `<li>${guardian}</li>`).join('');
-  }
-  if (improvementsList) {
-    improvementsList.innerHTML = sustainabilityRanking.improvements.map((item) => `<li>${item}</li>`).join('');
-  }
+  container.innerHTML = '';
+  items.forEach((item, index) => {
+    const entry = document.createElement('div');
+    entry.className = 'ranking-item';
+    entry.innerHTML = formatter(item, index + 1);
+    container.appendChild(entry);
+  });
+}
+
+function loadRankings() {
+  renderRankingList('lista-cidades', cidadesSustentaveis, (item, position) => `
+    <strong>${position}º</strong> ${item.nome} — ${item.pontos} pontos
+  `);
+
+  renderRankingList('lista-bairros', bairrosSustentaveis, (item, position) => `
+    <strong>${position}º</strong> ${item.nome} — ${item.pontos} pontos
+  `);
+
+  renderRankingList('lista-evolucoes', evolucoesAmbientais, (item) => `
+    📈 ${item.nome} — ${item.crescimento} de melhoria
+  `);
 }
 
 function requestUserLocation() {
@@ -539,32 +578,56 @@ function createRobotCard(robot) {
   return card;
 }
 
-function createMissionCard(mission) {
+function createMissionCard(mission, index) {
   const card = document.createElement('article');
   card.className = 'mission-card';
+  card.dataset.index = index;
   const statusClass = mission.status === 'Pendente' ? 'status-pending' : mission.status === 'Em andamento' ? 'status-active' : 'status-new';
 
   card.innerHTML = `
-    <h3>${mission.title}</h3>
-    <p>${mission.reward}</p>
-    <div class="mission-meta">
+    <div class="mission-card-header">
+      <h3>${mission.title}</h3>
       <span class="status ${statusClass}">${mission.status}</span>
-      <span>Recompensa disponível</span>
+    </div>
+    <p>${mission.description}</p>
+    <div class="mission-meta">
+      <span class="mission-reward">${mission.reward}</span>
+      <button type="button" class="btn btn-secondary mission-action-button">Concluir</button>
     </div>
   `;
 
   return card;
 }
 
+function completeMission(card, mission) {
+  if (!card || mission.status === 'Concluído') return;
+
+  mission.status = 'Concluído';
+  const statusLabel = card.querySelector('.status');
+  const rewardLabel = card.querySelector('.mission-reward');
+  const actionButton = card.querySelector('.mission-action-button');
+
+  if (statusLabel) {
+    statusLabel.textContent = 'Concluído';
+    statusLabel.className = 'status status-completed';
+  }
+  if (rewardLabel) {
+    rewardLabel.textContent = `${mission.reward} validados`;
+  }
+  if (actionButton) {
+    actionButton.textContent = 'Concluído';
+    actionButton.disabled = true;
+    actionButton.classList.add('completed');
+  }
+
+  card.classList.add('mission-completed');
+}
+
 function initializePanel() {
   const alertsList = document.getElementById('alerts-list');
   const robotsList = document.getElementById('robots-list');
   const missionsList = document.getElementById('missions-list');
-  const phValue = document.getElementById('ph-value');
-  const phBar = document.getElementById('ph-bar');
-  const phStatus = document.getElementById('ph-status');
   const statusScore = document.getElementById('status-score');
-  const statusPh = document.getElementById('status-ph');
   const statusRobots = document.getElementById('status-robots');
   const mapInfo = document.getElementById('map-info');
   const mapFrame = document.getElementById('map-frame');
@@ -624,138 +687,182 @@ function initializePanel() {
 
   alerts.forEach((alert) => alertsList.appendChild(createAlertCard(alert)));
   robots.forEach((robot) => robotsList.appendChild(createRobotCard(robot)));
-  missions.forEach((mission) => missionsList.appendChild(createMissionCard(mission)));
+  missions.forEach((mission, index) => {
+    const card = createMissionCard(mission, index);
+    missionsList.appendChild(card);
+
+    card.addEventListener('click', () => completeMission(card, mission));
+    const actionButton = card.querySelector('.mission-action-button');
+    if (actionButton) {
+      actionButton.addEventListener('click', (event) => {
+        event.stopPropagation();
+        completeMission(card, mission);
+      });
+    }
+  });
 
   if (statusScore) {
     statusScore.textContent = `${telemetry.score}%`;
   }
-  if (statusPh) {
-    statusPh.textContent = telemetry.ph.toFixed(1);
-  }
   if (statusRobots) {
     statusRobots.textContent = telemetry.robotsActive;
   }
-  if (phValue) {
-    phValue.textContent = telemetry.ph.toFixed(1);
-  }
 
-<<<<<<< HEAD
-  const barWidth = Math.min(Math.max(((telemetry.ph - 4) / 6) * 100, 0), 100);
-  if (phBar) {
-    phBar.style.width = `${barWidth}%`;
-  }
-  if (phBar && phStatus) {
-    if (telemetry.ph <= 6) {
-      phBar.style.background = '#f97316';
-      phStatus.textContent = 'Água perigosa';
-    } else if (telemetry.ph < 7.2) {
-      phBar.style.background = '#fbbf24';
-      phStatus.textContent = 'Água em atenção';
-    } else {
-      phBar.style.background = '#22c55e';
-      phStatus.textContent = 'Água saudável';
-    }
-  }
-
-  if (mapFrame) {
-    mapFrame.querySelectorAll('.map-marker').forEach((marker) => {
-      marker.addEventListener('click', () => {
-        const place = marker.dataset.place;
-        if (mapInfo) {
-          mapInfo.textContent = mapPlaceInfo[place] || 'Detalhes indisponíveis.';
-        }
-=======
   if (mapFrame && mapInfo) {
     mapFrame.querySelectorAll('.map-marker').forEach((marker) => {
       marker.addEventListener('click', () => {
         const place = marker.dataset.place;
         mapInfo.textContent = mapPlaceInfo[place] || 'Detalhes indisponíveis.';
->>>>>>> a9d17da80ad8ab2758c365c54a2045394768c4d0
       });
     });
   }
 
   let currentCityIndex = 2;
-  updateCityState(currentCityIndex);
 
-<<<<<<< HEAD
+  function updateCityState(index) {
+    const state = cityStates[index];
+    if (!state) return;
+
+    if (cityTitle) cityTitle.textContent = state.title;
+    if (citySummary) citySummary.textContent = state.summary;
+    if (cityFeature1) cityFeature1.textContent = state.features[0];
+    if (cityFeature2) cityFeature2.textContent = state.features[1];
+    if (cityFeature3) cityFeature3.textContent = state.features[2];
+  }
+
+  if (cityTitle || citySummary || cityFeature1 || cityFeature2 || cityFeature3) {
+    updateCityState(currentCityIndex);
+  }
+
   if (toggleCityState) {
     toggleCityState.addEventListener('click', () => {
       currentCityIndex = (currentCityIndex + 1) % cityStates.length;
       updateCityState(currentCityIndex);
     });
   }
-=======
-  // Criar modal dinamicamente via JavaScript (para evitar depender de HTML estático)
-  const riverModalNodes = (function createRiverModal() {
-    const modal = document.createElement('div');
-    modal.id = 'river-modal';
-    modal.className = 'hidden';
-    modal.style.cssText = 'position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.6);z-index:9999;';
 
-    const dialog = document.createElement('div');
-    dialog.style.cssText = 'background:#fff;border-radius:8px;padding:20px;max-width:560px;width:90%;box-shadow:0 8px 24px rgba(0,0,0,0.3);position:relative;';
+  // --- Fluxograma de saneamento: tornar etapas clicáveis e mostrar explicações educativas ---
+  function createOrGetTreatmentExplanationContainer(panel) {
+    let container = panel.querySelector('.treatment-explanation');
+    if (!container) {
+      container = document.createElement('div');
+      container.className = 'treatment-explanation panel panel-glass';
+      container.style.marginTop = '12px';
+      container.innerHTML = `
+        <h3 id="treatment-explanation-title">Detalhes da etapa</h3>
+        <div id="treatment-explanation-body" class="field-hint">Clique em uma etapa do fluxograma para ver uma explicação educativa.</div>
+      `;
+      panel.appendChild(container);
+    }
+    return container;
+  }
 
-    const closeBtn = document.createElement('button');
-    closeBtn.id = 'river-modal-close';
-    closeBtn.style.cssText = 'position:absolute;right:12px;top:8px;border:none;background:transparent;font-size:22px;cursor:pointer;';
-    closeBtn.textContent = '×';
+  const treatmentExplanations = {
+    'coleta da agua': {
+      title: 'Coleta da Água',
+      what: 'Etapa responsável por captar água de rios, represas ou reservatórios.',
+      how: 'A água é retirada e encaminhada para as estações de tratamento.',
+      why: 'Garante o abastecimento da população.'
+    },
+    'tratamento da agua': {
+      title: 'Tratamento da Água',
+      what: 'Processo que remove impurezas da água.',
+      how: 'São realizados vários procedimentos para torná-la adequada para consumo.',
+      why: 'Protege a saúde da população.'
+    },
+    'tratamento quimico': {
+      title: 'Tratamento Químico',
+      what: 'Aplicação de produtos químicos para eliminar microrganismos e impurezas.',
+      how: 'São utilizados produtos como cloro e flúor.',
+      why: 'Garante água segura e própria para beber.'
+    },
+    'distribuicao da agua': {
+      title: 'Distribuição da Água',
+      what: 'Envio da água tratada para residências e estabelecimentos.',
+      how: 'Através de tubulações e reservatórios.',
+      why: 'Permite o abastecimento da população.'
+    },
+    'tratamento do esgoto': {
+      title: 'Tratamento de Esgoto',
+      what: 'Processo de limpeza da água utilizada pela população.',
+      how: 'Remove poluentes antes da devolução ao meio ambiente.',
+      why: 'Evita a contaminação de rios e protege o meio ambiente.'
+    }
+  };
 
-    const nameEl = document.createElement('h3');
-    nameEl.id = 'river-name';
-    nameEl.textContent = 'Nome do rio';
+  function normalizeKey(text) {
+    if (!text) return '';
+    return text
+      .toString()
+      .trim()
+      .normalize('NFD')
+      .replace(/\p{Diacritic}/gu, '')
+      .replace(/[^a-zA-Z0-9 ]/g, '')
+      .toLowerCase();
+  }
 
-    const neigh = document.createElement('p');
-    neigh.id = 'river-neighborhood';
-    neigh.textContent = 'Bairro: —';
+  function formatExplanation(stepTitle, data) {
+    if (!data) {
+      return `
+        <p><strong>O que é a etapa:</strong> ${stepTitle}.</p>
+        <p><strong>Como funciona:</strong> Esta etapa faz parte do processo geral de saneamento e envolve ações técnicas específicas para alcançar seu objetivo.</p>
+        <p><strong>Sua importância para o saneamento:</strong> Contribui para o funcionamento seguro e eficiente do sistema de abastecimento e tratamento.</p>
+      `;
+    }
+    return `
+      <p><strong>O que é a etapa:</strong> ${data.what}</p>
+      <p><strong>Como funciona:</strong> ${data.how}</p>
+      <p><strong>Sua importância para o saneamento:</strong> ${data.why}</p>
+    `;
+  }
 
-    const evo = document.createElement('div');
-    evo.id = 'river-evolution';
-    evo.style.cssText = 'margin-top:12px;display:flex;flex-direction:column;gap:8px;';
+  function setupTreatmentFlowInteractions() {
+    const saneamentoSection = document.getElementById('saneamento');
+    if (!saneamentoSection) return;
+    const panel = saneamentoSection.querySelector('.treatment-panel') || saneamentoSection.querySelector('.panel');
+    if (!panel) return;
+    const stepsList = panel.querySelector('.treatment-steps');
+    if (!stepsList) return;
 
-    dialog.appendChild(closeBtn);
-    dialog.appendChild(nameEl);
-    dialog.appendChild(neigh);
-    dialog.appendChild(evo);
-    modal.appendChild(dialog);
-    document.body.appendChild(modal);
+    const explanationContainer = createOrGetTreatmentExplanationContainer(panel);
+    const explanationTitle = explanationContainer.querySelector('#treatment-explanation-title');
+    const explanationBody = explanationContainer.querySelector('#treatment-explanation-body');
 
-    return { modal, closeBtn, nameEl, neigh, evo };
-  })();
+    // Tornar cada item clicável e garantir IDs
+    Array.from(stepsList.querySelectorAll('li')).forEach((li, index) => {
+      li.style.cursor = 'pointer';
+      // garantir ID único se não existir
+      if (!li.id) {
+        const strong = li.querySelector('strong');
+        const base = strong ? strong.textContent.trim() : li.textContent.trim();
+        const slug = normalizeKey(base).replace(/\s+/g, '-').slice(0, 60) || `step-${index}`;
+        li.id = `treatment-step-${slug}`;
+      }
+      li.addEventListener('click', () => {
+        const strong = li.querySelector('strong');
+        const rawText = strong ? strong.textContent.trim() : li.textContent.trim();
+        const key = normalizeKey(rawText);
 
-  function openRiverModal(river) {
-    riverModalNodes.nameEl.textContent = river.name;
-    riverModalNodes.neigh.textContent = `Bairro: ${river.neighborhood}`;
-    riverModalNodes.evo.innerHTML = '';
-    river.evolution.forEach((step) => {
-      const item = document.createElement('div');
-      item.style.padding = '8px';
-      item.style.borderLeft = '3px solid #06b6d4';
-      item.innerHTML = `<strong>${step.year}</strong> — ${step.status}`;
-      riverModalNodes.evo.appendChild(item);
+        // map variants to canonical keys
+        let lookupKey = key;
+        if (key.includes('filtr') || key.includes('filtro')) {
+          lookupKey = 'tratamento da agua';
+        }
+        if (key.includes('distribu') && !key.includes('potavel')) {
+          lookupKey = 'distribuicao da agua';
+        }
+
+        const data = treatmentExplanations[lookupKey] || treatmentExplanations[key] || null;
+        if (explanationTitle) explanationTitle.textContent = data ? data.title : `Etapa: ${rawText}`;
+        if (explanationBody) explanationBody.innerHTML = formatExplanation(rawText, data);
+        // scroll into view for accessibility
+        explanationContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      });
     });
-    riverModalNodes.modal.style.display = 'flex';
-    riverModalNodes.modal.classList.remove('hidden');
   }
 
-  function closeRiverModal() {
-    riverModalNodes.modal.style.display = 'none';
-    riverModalNodes.modal.classList.add('hidden');
-  }
-
-  toggleCityState.addEventListener('click', () => openRiverModal(sampleRiver));
-  riverModalNodes.closeBtn.addEventListener('click', closeRiverModal);
-  riverModalNodes.modal.addEventListener('click', (ev) => { if (ev.target === riverModalNodes.modal) closeRiverModal(); });
->>>>>>> a9d17da80ad8ab2758c365c54a2045394768c4d0
-
-  function updateCityState(index) {
-    const state = cityStates[index];
-    cityTitle.textContent = state.title;
-    citySummary.textContent = state.summary;
-    cityFeature1.textContent = state.features[0];
-    cityFeature2.textContent = state.features[1];
-    cityFeature3.textContent = state.features[2];
-  }
+  // inicializar interação do fluxo de saneamento
+  setupTreatmentFlowInteractions();
 
   loadRankings();
   startTelemetryLoop();

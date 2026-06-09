@@ -123,16 +123,23 @@
               </div>
               <span class="tag">Visual interativo</span>
             </div>
-            <div class="sim-map" id="sim-map"></div>
-            <div class="map-summary">
-              <div class="map-summary-item"><span class="status-pill red"></span><strong id="count-grave">0</strong> graves</div>
-              <div class="map-summary-item"><span class="status-pill yellow"></span><strong id="count-medium">0</strong> médias</div>
-              <div class="map-summary-item"><span class="status-pill green"></span><strong id="count-resolved">0</strong> resolvidas</div>
-            </div>
-            <div class="map-legend-panel">
-              <div class="map-legend-item"><span class="map-legend-dot red"></span>Grave</div>
-              <div class="map-legend-item"><span class="map-legend-dot yellow"></span>Médio</div>
-              <div class="map-legend-item"><span class="map-legend-dot green"></span>Resolvido</div>
+            <div class="severity-education">
+              <div class="severity-controls">
+                <p class="field-label">Selecione a gravidade</p>
+                <div class="severity-buttons">
+                  <button class="btn btn-outline severity-btn" data-severity="baixa">Baixa</button>
+                  <button class="btn btn-outline severity-btn" data-severity="media">Média</button>
+                  <button class="btn btn-outline severity-btn" data-severity="alta">Alta</button>
+                  <button class="btn btn-outline severity-btn" data-severity="critica">Crítica</button>
+                </div>
+              </div>
+
+              <div class="severity-info" id="severity-info">
+                <h3 id="severity-title">Informações sobre gravidade</h3>
+                <div id="severity-meaning"><strong>Significado:</strong> Selecione um nível para ver o significado.</div>
+                <div id="severity-when"><strong>Quando utilizar:</strong> -</div>
+                <div id="severity-why"><strong>Por que é importante denunciar:</strong> Denunciar ajuda a identificar prioridades e direcionar ações de prevenção e reparo.</div>
+              </div>
             </div>
           </div>
         </section>
